@@ -35,7 +35,8 @@ defmodule Database.UploadController do
         IO.inspect "####################################"
         # Generate the UUID
         #file_uuid = UUID.uuid4(:hex)
-      
+        18:36:13.78
+        18:36:13
         
         IO.inspect "####################################"
         # Load the file into memory
@@ -44,7 +45,9 @@ defmodule Database.UploadController do
         decoded = CSVLixir.parse(file_binary)
         #IO.inspect decoded
         [head | tail] = decoded
+        IO.inspect DateTime.utc_now
         upload_data(conn,tail)
+        IO.inspect DateTime.utc_now
         conn
         |> put_flash(:success, "File uploaded successfully!")
         |> render("upload.html")
