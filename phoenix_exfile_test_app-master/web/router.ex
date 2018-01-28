@@ -1,5 +1,7 @@
-defmodule Database.Router do
-  use Database.Web, :router
+defmodule PhoenixExfileTestApp.Router do
+  use PhoenixExfileTestApp.Web, :router
+
+  forward "/attachments", Exfile.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,17 +15,11 @@ defmodule Database.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", Database do
+  scope "/", PhoenixExfileTestApp do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    resources "/datas", DataController
-    get "/upload", UploadController, :upload_form
-    post "/upload", UploadController, :upload
-  end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", Database do
-  #   pipe_through :api
-  # end
+    resources "/post", PostController
+  end
 end

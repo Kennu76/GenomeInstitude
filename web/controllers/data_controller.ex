@@ -10,7 +10,7 @@ defmodule Database.DataController do
 
   def new(conn, _params) do
     changeset = Data.changeset(%Data{})
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "form.html", changeset: changeset)
   end
 
   def create(conn, %{"data" => data_params}) do

@@ -35,4 +35,3 @@
   </tbody>
 </table>
 
-<span><%= link "New data", to: data_path(@conn, :new) %></span>
