@@ -9,7 +9,7 @@ defmodule Database.UploadController do
 
     def upload_data(conn, []) do
         conn
-        |> put_flash(:success, "Data uploaded successfully!")
+        |> put_flash(:info, "Data uploaded successfully!")
         |> render("upload.html")
     end
 
