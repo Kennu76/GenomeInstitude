@@ -1,5 +1,6 @@
 defmodule Database.Data do
   use Database.Web, :model
+  use Rummage.Ecto
 
   schema "datas" do
     field :code, :string

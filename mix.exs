@@ -33,7 +33,7 @@ defmodule Database.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:phoenix, "~> 1.3.0-rc"},
+      {:phoenix, "~> 1.3.0", override: true},
       {:phoenix_pubsub, "~> 1.0"},
       {:phoenix_ecto, "~> 3.2"},
       {:postgrex, ">= 0.0.0"},
@@ -41,7 +41,8 @@ defmodule Database.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:csvlixir, "~> 2.0.3"}
+      {:csvlixir, "~> 2.0.3"},
+      {:rummage_phoenix, "~> 1.0.0"}
     ]
   end
 

@@ -32,6 +32,7 @@
       </td>-->
     </tr>
 <% end %>
+<%= pagination_link(@conn, @rummage) %>
   </tbody>
 </table>
 

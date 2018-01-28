@@ -33,3 +33,7 @@ First of all I made up a simple plan of implementing the site:
 
 First of all I started by searching how to implement an upload form in Elixir, this is the most difficult part so this will take some time.
 
+Tried using "csv" dependency but it did not work, "CSVLixir" dependency worked quite well!
+
+Trying to use "Rummage" dependency, not really working. Eventually I got it to work, a typical problem with open-source dependecies that are often updated :).
+
