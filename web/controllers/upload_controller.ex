@@ -1,9 +1,32 @@
 defmodule Database.UploadController do  
     use Database.Web, :controller
-  
+
+    alias Database.Data
     def upload_form(conn, _params) do
         
       render conn, "upload.html"
+    end
+
+    def upload_data(conn, []) do
+        conn
+        |> put_flash(:success, "Data uploaded successfully!")
+        |> render("upload.html")
+    end
+
+    def upload_data(conn, [h|t]) do
+        [hed|tal] = h
+        splitted = String.split(hed,";")
+        IO.inspect splitted |> Enum.at(0)
+        %Database.Data{
+            code: splitted |> Enum.at(0),
+            idcode: splitted |> Enum.at(1),
+            inst:  splitted |> Enum.at(2),
+            time:  splitted |> Enum.at(3),
+            first:  splitted |> Enum.at(4),
+            last:  splitted |> Enum.at(5),
+            email:  splitted |> Enum.at(6)}
+        |> Database.Repo.insert!
+        upload_data(conn, t)
     end
   
     def upload(conn, %{"upload" => %{"file" => file}}) do  
@@ -17,9 +40,11 @@ defmodule Database.UploadController do
         IO.inspect "####################################"
         # Load the file into memory
         {:ok, file_binary} = File.read(file.path)
-        IO.inspect file_binary
+        #IO.inspect file_binary
         decoded = CSVLixir.parse(file_binary)
-        IO.inspect decoded
+        #IO.inspect decoded
+        [head | tail] = decoded
+        upload_data(conn,tail)
         conn
         |> put_flash(:success, "File uploaded successfully!")
         |> render("upload.html")

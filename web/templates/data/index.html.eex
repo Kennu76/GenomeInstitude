@@ -25,11 +25,11 @@
       <td><%= data.last %></td>
       <td><%= data.email %></td>
 
-      <td class="text-right">
+      <!--<td class="text-right">
         <span><%= link "Show", to: data_path(@conn, :show, data), class: "btn btn-default btn-xs" %></span>
         <span><%= link "Edit", to: data_path(@conn, :edit, data), class: "btn btn-default btn-xs" %></span>
         <span><%= link "Delete", to: data_path(@conn, :delete, data), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
-      </td>
+      </td>-->
     </tr>
 <% end %>
   </tbody>
