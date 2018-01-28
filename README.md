@@ -18,3 +18,18 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
   * Docs: https://hexdocs.pm/phoenix
   * Mailing list: http://groups.google.com/group/phoenix-talk
   * Source: https://github.com/phoenixframework/phoenix
+
+
+# Creating a website for the assignment given from the Genome Institute
+
+First of all I made up a simple plan of implementing the site:
+
+1. Create the Elixir project.
+2. Create the necesarry database table with the fields: code, idcode, isnt, time, first, last, email.
+3. Research how to create an upload form page for csv and how to put the csv data into the DB.
+4. Create the upload form page
+5. Research how to display the data and how to implement a search into it.
+6. Create the page that displays the data which has a search function.
+
+First of all I started by searching how to implement an upload form in Elixir, this is the most difficult part so this will take some time.
+

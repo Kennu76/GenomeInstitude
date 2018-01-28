@@ -1,0 +1,43 @@
+<h2>Show data</h2>
+
+<ul>
+
+  <li>
+    <strong>Code:</strong>
+    <%= @data.code %>
+  </li>
+
+  <li>
+    <strong>Idcode:</strong>
+    <%= @data.idcode %>
+  </li>
+
+  <li>
+    <strong>Inst:</strong>
+    <%= @data.inst %>
+  </li>
+
+  <li>
+    <strong>Time:</strong>
+    <%= @data.time %>
+  </li>
+
+  <li>
+    <strong>First:</strong>
+    <%= @data.first %>
+  </li>
+
+  <li>
+    <strong>Last:</strong>
+    <%= @data.last %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @data.email %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: data_path(@conn, :edit, @data) %></span>
+<span><%= link "Back", to: data_path(@conn, :index) %></span>
