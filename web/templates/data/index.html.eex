@@ -1,10 +1,11 @@
 <h2>Listing datas</h2>
-
+<%= search_form(@conn, @rummage, [fields: [idcode: %{label: "", search_type: "ilike"},],
+                                            button_class: "button"]) %>
 <table class="table">
   <thead>
     <tr>
-      <th>Code</th>
-      <th>Idcode</th>
+      <!--<th><%= sort_link @conn, @rummage, [field: :code, ci: true] %></th>-->
+      <th><%= sort_link @conn, @rummage, [field: :idcode] %></th>
       <th>Inst</th>
       <th>Time</th>
       <th>First</th>
@@ -17,7 +18,7 @@
   <tbody>
 <%= for data <- @datas do %>
     <tr>
-      <td><%= data.code %></td>
+      <!--<td><%= data.code %></td>-->
       <td><%= data.idcode %></td>
       <td><%= data.inst %></td>
       <td><%= data.time %></td>

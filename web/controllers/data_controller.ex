@@ -1,6 +1,6 @@
 defmodule Database.DataController do
   use Database.Web, :controller
-  #use Rummage.Ecto
+  use Rummage.Phoenix.Controller
   alias Database.Data
 
   def index(conn, params) do

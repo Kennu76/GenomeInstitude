@@ -35,5 +35,17 @@ First of all I started by searching how to implement an upload form in Elixir, t
 
 Tried using "csv" dependency but it did not work, "CSVLixir" dependency worked quite well!
 
-Trying to use "Rummage" dependency, not really working. Eventually I got it to work, a typical problem with open-source dependecies that are often updated :).
+Trying to use "Rummage" dependency, not really working. Eventually I got it to work, a typical problem with open-source dependecies that are often updated :). 
 
+Sorting and pagination works, but I have issues with the search form.
+
+
+
+<!-->
+<%= search_form(@conn, @rummage, 
+  [fields:
+    [code: %{label: "Search by ID", search_type: "ilike"}],
+  ], button_class: "btn",
+  )
+
+%> -->
