@@ -3,6 +3,7 @@
   <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
 </div>
 
-
+<!-- This button sends the user to the Upload site-->
 <span><%= button("Press here to go to the upload", to: "/upload", method: "get", class: "btn") %></span>
+<!-- This button sends the user to the Database site-->
 <span><%= button("Press here to go to the database", to: "/datas", method: "get", class: "btn") %></span>

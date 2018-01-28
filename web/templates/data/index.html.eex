@@ -1,15 +1,18 @@
-<h2>Listing datas</h2>
+<h2>Listing the database table</h2>
+<!-- Here is the search form that can be used to search by the idcode
+ The results are shown after pressign the button-->
 <%= search_form(@conn, @rummage, [fields: [idcode: %{label: "", search_type: "ilike"},],
                                             button_class: "button"]) %>
 <table class="table">
   <thead>
     <tr>
-      <!--<th><%= sort_link @conn, @rummage, [field: :code, ci: true] %></th>-->
+    <!-- Here I implying a sorting function.
+         Yes this was not necesarry for the project but I left it in because its neat :) -->
       <th><%= sort_link @conn, @rummage, [field: :idcode] %></th>
-      <th>Inst</th>
+      <th>Institute</th>
       <th>Time</th>
-      <th>First</th>
-      <th>Last</th>
+      <th>First name</th>
+      <th>Last name</th>
       <th>Email</th>
 
       <th></th>
@@ -18,23 +21,20 @@
   <tbody>
 <%= for data <- @datas do %>
     <tr>
-      <!--<td><%= data.code %></td>-->
+      <!--Here we show the data, which is referenced in @datas.-->
       <td><%= data.idcode %></td>
       <td><%= data.inst %></td>
       <td><%= data.time %></td>
       <td><%= data.first %></td>
       <td><%= data.last %></td>
       <td><%= data.email %></td>
-
-      <!--<td class="text-right">
-        <span><%= link "Show", to: data_path(@conn, :show, data), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: data_path(@conn, :edit, data), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: data_path(@conn, :delete, data), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
-      </td>-->
     </tr>
 <% end %>
 
   </tbody>
 </table>
+<!-- This implying the pagination, meaning the data is now splitted into pages. 
+     The amount of data that is displayed per page can be changed in the config/config.ex file. -->
 <%= pagination_link(@conn, @rummage) %>
+<!-- This button sends the user to the Upload site-->
 <span><%= button("Go to Upload page", to: "/upload", method: "get", class: "btn") %></span>

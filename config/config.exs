@@ -26,7 +26,7 @@ config :logger, :console,
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
 
-
+# The rummage configurations
 config :rummage_ecto, Rummage.Ecto,
   default_repo: Database.Repo,
   default_per_page: 10

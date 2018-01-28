@@ -17,7 +17,9 @@ defmodule Database.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    # This implements the data as a resource
     resources "/datas", DataController
+    # These implement the uploading
     get "/upload", UploadController, :upload_form
     post "/upload", UploadController, :upload
   end
