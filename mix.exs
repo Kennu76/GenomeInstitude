@@ -42,7 +42,9 @@ defmodule Database.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:csvlixir, "~> 2.0.3"},
-      {:rummage_phoenix, "~> 1.0.0"}
+      {:rummage_phoenix, "~> 1.0.0"},
+      {:csv, "~> 1.0.0"},
+      {:nimble_csv, "~> 0.3"}
     ]
   end
 
